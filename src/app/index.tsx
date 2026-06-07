@@ -8,10 +8,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const renderCategoryItem = ({ item }: { item: CategoryGridTileProps }) => {
   const router = useRouter();
 
-  const pressHandler = () => {
+  const pressHandler = (item: CategoryGridTileProps) => {
     router.push({
-      pathname: "/meals-overview",
-      params: {},
+      pathname: "/meals",
+      params: {
+        categoryId: item.id,
+      },
     });
   };
 
@@ -19,7 +21,7 @@ const renderCategoryItem = ({ item }: { item: CategoryGridTileProps }) => {
     <CategoryGridTile
       title={item.title}
       color={item.color}
-      onPress={pressHandler}
+      onPress={() => pressHandler(item)}
     />
   );
 };

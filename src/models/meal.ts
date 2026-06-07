@@ -5,7 +5,7 @@ class Meal {
   affordability: string;
   complexity: string;
   imageUrl: string;
-  duration: string;
+  duration: string | number;
   ingredients: string;
   steps: string;
   isGlutenFree: string;

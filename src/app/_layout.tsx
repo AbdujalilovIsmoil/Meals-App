@@ -1,20 +1,30 @@
 import { Stack } from "expo-router";
-import { Platform, StatusBar, StyleSheet } from "react-native";
+import { StatusBar, StyleSheet } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const Layout = () => {
   return (
     <SafeAreaProvider>
-      <StatusBar
-        barStyle={Platform.OS === "android" ? "light-content" : "dark-content"}
-      />
+      <StatusBar barStyle={"light-content"} />
 
-      <Stack initialRouteName="index">
-        <Stack.Screen name="index" options={{ title: "Home" }} />
+      <Stack
+        initialRouteName="index"
+        screenOptions={{
+          headerTintColor: "white",
+          headerStyle: { backgroundColor: "#351401" },
+          contentStyle: {
+            backgroundColor: "#3f2f25",
+          },
+        }}
+      >
         <Stack.Screen
-          name="meals-overview"
-          options={{ title: "Meals Over View" }}
+          name="index"
+          options={{
+            title: "All Categories",
+          }}
         />
+        <Stack.Screen name="meals/index" />
+        <Stack.Screen name="meals/[mealId]" />
       </Stack>
     </SafeAreaProvider>
   );
