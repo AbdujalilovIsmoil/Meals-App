@@ -1,14 +1,14 @@
 import { MealItemProps } from "@/types/CategoryGridTileProps";
 import { StyleSheet, Text, View } from "react-native";
 
-type Props = Pick<MealItemProps, "duration" | "complexity" | "affordability">;
+type Props = Pick<MealItemProps, "duration" | "complexity" | "affordability" | "style" | "textStyle">;
 
-const MealDetails = ({ duration, complexity, affordability }: Props) => {
+const MealDetails = ({ duration, complexity, affordability, style, textStyle }: Props) => {
   return (
-    <View style={styles.details}>
-      <Text style={styles.detailItem}>{duration}m</Text>
-      <Text style={styles.detailItem}>{complexity.toUpperCase()}</Text>
-      <Text style={styles.detailItem}>{affordability.toUpperCase()}</Text>
+    <View style={[styles.details, style]}>
+      <Text style={[styles.detailItem, textStyle]}>{duration}m</Text>
+      <Text style={[styles.detailItem, textStyle]}>{complexity.toUpperCase()}</Text>
+      <Text style={[styles.detailItem, textStyle]}>{affordability.toUpperCase()}</Text>
     </View>
   );
 };
