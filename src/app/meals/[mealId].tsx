@@ -1,3 +1,4 @@
+import IconButton from "@/components/IconButton";
 import List from "@/components/MealDetail/List";
 import SubTitle from "@/components/MealDetail/SubTitle";
 import MealDetails from "@/components/MealDetails";
@@ -5,14 +6,7 @@ import { MEALS } from "@/data/dummy-data";
 import { useNavigation } from "expo-router";
 import { useLocalSearchParams } from "expo-router/build/hooks";
 import { useLayoutEffect } from "react";
-import {
-  Button,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 const MealDetailScreen = () => {
   const navigation = useNavigation();
@@ -27,7 +21,13 @@ const MealDetailScreen = () => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => {
-        return <Button title="Tap me!" onPress={headerButtonPressHandler} />;
+        return (
+          <IconButton
+            name="star"
+            color="white"
+            onPress={headerButtonPressHandler}
+          />
+        );
       },
     });
   }, [navigation, headerButtonPressHandler]);
