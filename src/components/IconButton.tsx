@@ -2,9 +2,9 @@ import { Ionicons } from "@expo/vector-icons";
 import { Pressable, StyleSheet } from "react-native";
 
 interface IconButtonProps {
-  name: "star";
   color: string;
   onPress?: () => void;
+  name: "star" | "star-outline";
 }
 
 const IconButton = ({ onPress, color, name }: IconButtonProps) => {

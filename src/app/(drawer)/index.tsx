@@ -26,7 +26,7 @@ const renderCategoryItem = ({ item }: { item: CategoryGridTileProps }) => {
   );
 };
 
-const CategoriesScreen = () => {
+const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
@@ -39,7 +39,7 @@ const CategoriesScreen = () => {
   );
 };
 
-export default CategoriesScreen;
+export default App;
 
 const styles = StyleSheet.create({
   container: {
