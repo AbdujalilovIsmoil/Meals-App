@@ -1,14 +1,16 @@
 import MealsList from "@/components/MealsList/MealsList";
 import { MEALS } from "@/data/dummy-data";
-import { FavouriteContext } from "@/store/context/favourite-context";
-import { useContext } from "react";
+import { FavoriteState } from "@/types/CategoryGridTileProps";
 import { StyleSheet, Text, View } from "react-native";
+import { useSelector } from "react-redux";
 
 const Favourite = () => {
-  const favoriteMealsCtx = useContext(FavouriteContext);
+  const favoriteMealsIds = useSelector(
+    (state: { favoriteMeals: FavoriteState }) => state.favoriteMeals.ids,
+  );
 
   const favoriteMeals = MEALS.filter((meal) => {
-    return favoriteMealsCtx.ids.includes(meal.id);
+    return favoriteMealsIds.includes(meal.id);
   });
 
   if (favoriteMeals.length === 0) {
@@ -32,7 +34,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    color: "white",
+    color: "black",
     fontWeight: "bold",
   },
 });
