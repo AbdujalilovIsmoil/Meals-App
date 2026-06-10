@@ -1,56 +1,107 @@
-# Welcome to your Expo app 👋
+# 🍽️ Meals App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple and modern mobile application built with **React Native** and **Expo**. Users can browse meal categories, explore meal details, and save their favorite meals for quick access.
 
-## Get started
+---
 
-1. Install dependencies
+## 📱 Screenshots
 
-   ```bash
-   npm install
-   ```
+<p align="center">
+  <img src="https://img.sanishtech.com/u/95bb756f1f2f3f899ef327c4553e3d04.png" alt="Categories Screen" width="230"/>
+  <img src="https://img.sanishtech.com/u/0756ce977637d83bba19eccaa39b6f97.png" alt="Meal Details Screen" width="230"/>
+  <img src="https://img.sanishtech.com/u/24a30af82c5920b372a70b99a3ce3761.png" alt="Favorites Screen" width="230"/>
+</p>
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## ✨ Features
 
-In the output, you'll find options to open the app in a
+* 🍔 Browse meals by categories
+* 📋 View meal details
+* ❤️ Add meals to favorites
+* 🗂️ Dedicated favorites screen
+* 🚪 Drawer Navigation
+* 📱 Responsive mobile design
+* ⚡ Smooth user experience
+* 📦 Local data usage
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🛠️ Technologies Used
 
-## Get a fresh project
+* ⚛️ React Native
+* 🚀 Expo
+* 🧭 React Navigation
 
-When you're ready, run:
+  * Stack Navigation
+  * Drawer Navigation
+* 🎯 Expo Vector Icons
+* 🪝 React Hooks
 
-```bash
-npm run reset-project
+---
+
+## 📂 Project Structure
+
+```text
+src/
+├── components/
+├── screens/
+├── data/
+├── navigation/
+├── store/
+├── constants/
+└── models/
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-### Other setup steps
+## 🚀 Installation
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### Clone the repository
 
-## Learn more
+```bash
+git clone <repository-url>
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### Install dependencies
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm install
+```
 
-## Join the community
+### Run the project
 
-Join our community of developers creating universal apps.
+```bash
+npx expo start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 🎯 App Flow
+
+1. Open the app.
+2. Select a meal category.
+3. Browse available meals.
+4. View detailed meal information.
+5. Add or remove meals from favorites.
+6. Access favorite meals from the Favorites screen.
+
+---
+
+## 📚 Learning Outcomes
+
+This project helped me practice:
+
+* React Native fundamentals
+* Expo workflow
+* Component-based architecture
+* Navigation with Drawer & Stack
+* State management
+* Working with local data
+* Building reusable UI components
+
+---
+
+## 👨‍💻 Author
+
+Built with ❤️ using React Native and Expo.
