@@ -16,3 +16,7 @@ export interface MealItemProps extends CategoryGridTileProps {
   affordability: string;
   duration: number | string;
 }
+
+export interface FavoriteState {
+  ids: string[];
+}

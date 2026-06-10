@@ -1,8 +1,5 @@
+import { FavoriteState } from "@/types/CategoryGridTileProps";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface FavoriteState {
-  ids: string[];
-}
 
 const initialState: FavoriteState = {
   ids: [],
@@ -22,5 +19,5 @@ const favoriteSlice = createSlice({
   },
 });
 
-export const actions = favoriteSlice.actions;
+export const { addFavorite, removeFavorite } = favoriteSlice.actions;
 export default favoriteSlice.reducer;

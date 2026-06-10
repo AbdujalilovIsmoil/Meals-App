@@ -3,26 +3,32 @@ import List from "@/components/MealDetail/List";
 import SubTitle from "@/components/MealDetail/SubTitle";
 import MealDetails from "@/components/MealDetails";
 import { MEALS } from "@/data/dummy-data";
-import { FavouriteContext } from "@/store/context/favourite-context";
+import { addFavorite, removeFavorite } from "@/store/redux/favorite";
+import { FavoriteState } from "@/types/CategoryGridTileProps";
 import { useNavigation } from "expo-router";
 import { useLocalSearchParams } from "expo-router/build/hooks";
-import { useContext, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 
 const MealDetailScreen = () => {
-  const favoriteMealsCtx = useContext(FavouriteContext);
+  const dispatch = useDispatch();
   const navigation = useNavigation();
+  const favoriteMealsIds = useSelector(
+    (state: { favoriteMeals: FavoriteState }) => state.favoriteMeals.ids,
+  );
+
   const { mealId } = useLocalSearchParams();
 
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
 
-  const mealIsFavorite = favoriteMealsCtx.ids.includes(String(mealId));
+  const mealIsFavorite = favoriteMealsIds.includes(String(mealId));
 
   const changeFavoriteStatusHandler = () => {
     if (mealIsFavorite) {
-      favoriteMealsCtx.removeFavourite(String(mealId));
+      dispatch(removeFavorite({ id: String(mealId) }));
     } else {
-      favoriteMealsCtx.addFavorite(String(mealId));
+      dispatch(addFavorite({ id: String(mealId) }));
     }
   };
 
